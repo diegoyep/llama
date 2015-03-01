@@ -1,0 +1,43 @@
+// Portfolio Grid Section
+section#portfolio.bg-light-gray
+  .container
+    .row
+      .col-lg-12.text-center
+        h2.section-heading Find your adventure
+        |                     
+        h3.section-subheading.text-muted Choose between activities and regions 
+    |             
+    .row
+      .col-lg-12
+        form
+          .row
+            .col-md-3.col-md-offset-3
+              .form-group
+                label(for='activities')  What do you want to do? 
+                |                                    
+                |                                         
+                select.form-control(name='activities')
+                  option(selected='', value='All activities')  All activities
+            |                              
+            |                              
+            .col-md-3
+              .form-group
+                label(for='activities')  Where do you want to go? 
+                |                                        
+                |                                         
+                select.form-control(name='regions')
+                  option(selected='', value='All regions')  All regions
+            |        
+            |                                
+            |                             
+            .clearfix
+            |                             
+            .col-lg-12.text-center
+              button.btn.btn-xl(type='submit') Search
+              |                                 
+              h4.section-subheading.text-muted
+                br
+                | Or
+                br
+                br
+                a.page-scroll(href='#about') Find out about us
