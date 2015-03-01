@@ -27,6 +27,7 @@ var connectAssets = require('connect-assets');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
+var AdminController = require('./controllers/admin')
 
 /**
  * API keys and Passport configuration.
@@ -92,6 +93,9 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
+
+//The same goes to account creation routes
+
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -101,8 +105,18 @@ app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
-app.get('/contact', contactController.getContact);
+app.get('/contact', contactController.getContact); //Not needed. Contact is in main
 app.post('/contact', contactController.postContact);
+
+
+/**
+* Admin routes
+*/
+
+app.get('/admin', passportConf.isAuthenticated, AdminController.getAdminIndex)
+
+// All authenticating options are demoted. There is no auth flow yet
+
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
