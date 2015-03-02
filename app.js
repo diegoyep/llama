@@ -27,7 +27,6 @@ var connectAssets = require('connect-assets');
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
-var AdminController = require('./controllers/admin')
 
 /**
  * API keys and Passport configuration.
@@ -109,11 +108,6 @@ app.get('/contact', contactController.getContact); //Not needed. Contact is in m
 app.post('/contact', contactController.postContact);
 
 
-/**
-* Admin routes
-*/
-
-app.get('/admin', passportConf.isAuthenticated, AdminController.getAdminIndex)
 
 // All authenticating options are demoted. There is no auth flow yet
 
