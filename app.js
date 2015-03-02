@@ -25,14 +25,12 @@ var connectAssets = require('connect-assets');
  * Controllers (route handlers).
  */
 var homeController = require('./controllers/home');
-var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
 
 /**
  * API keys and Passport configuration.
  */
 var secrets = require('./config/secrets');
-var passportConf = require('./config/passport');
 
 /**
  * Create Express server.
