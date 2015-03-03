@@ -27,6 +27,7 @@ var connectAssets = require('connect-assets');
 var homeController = require('./controllers/home');
 var contactController = require('./controllers/contact');
 var resultsControlller = require('./controllers/results')
+var tourController = require('./controllers/tour');
 
 /**
  * API keys and Passport configuration.
@@ -91,7 +92,8 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
-app.post('/contact', contactController.postContact);
+app.post('/', tourController.postSearch);
+app.post('/contact', contactController.postContact); 
 app.get('/results', resultsControlller.getResults);
 
 /**

@@ -9,7 +9,9 @@ section#portfolio.bg-light-gray
     |             
     .row
       .col-lg-12
-        form
+        form(method="POST" role="form" action="/")
+          input(type='hidden', name='_csrf', value=_csrf)
+
           .row
             .col-md-3.col-md-offset-3
               .form-group
@@ -17,7 +19,7 @@ section#portfolio.bg-light-gray
                 |                                    
                 |                                         
                 select.form-control(name='activities')
-                  option(selected='', value='All activities')  All activities
+                  option(selected='', value='all')  All activities
             |                              
             |                              
             .col-md-3
@@ -26,15 +28,14 @@ section#portfolio.bg-light-gray
                 |                                        
                 |                                         
                 select.form-control(name='regions')
-                  option(selected='', value='All regions')  All regions
+                  option(selected='', value='all')  All regions
             |        
             |                                
             |                             
             .clearfix
             |                             
             .col-lg-12.text-center
-              //button.btn.btn-xl(type='submit') Search
-              a.page-scroll(href='/results') search
+              button.btn.btn-xl(type='submit') Search
               |                                 
               h4.section-subheading.text-muted
                 br
