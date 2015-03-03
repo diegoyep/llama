@@ -26,6 +26,7 @@ var connectAssets = require('connect-assets');
  */
 var homeController = require('./controllers/home');
 var contactController = require('./controllers/contact');
+var resultsControlller = require('./controllers/results')
 
 /**
  * API keys and Passport configuration.
@@ -91,6 +92,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  */
 app.get('/', homeController.index);
 app.post('/contact', contactController.postContact);
+app.get('/results', resultsControlller.getResults);
 
 /**
  * Error Handler.

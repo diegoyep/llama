@@ -261,11 +261,17 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+#navbarsearch {
+        background-color: #242020;
+
+}
+
+
 header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/d.jpg);
+    background-image: url(../img/a.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -274,6 +280,11 @@ header {
     -o-background-size: cover;
 }
 
+#headersearch{
+    background-image: none;
+    padding-top: 35px;
+    padding-bottom: 20px;
+}
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
