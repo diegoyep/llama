@@ -265,6 +265,9 @@ fieldset[disabled] .btn-xl.active {
         background-color: #242020;
 
 }
+#searchbar li {
+    padding: 5px 10px 5px 10px;
+}
 
 
 header {
