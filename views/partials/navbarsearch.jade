@@ -15,10 +15,24 @@ nav.navbar.navbar-default.navbar-fixed-top#navbarsearch
           a.navbar-brand.page-scroll(href='#page-top') Adventure Llama
         // Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
+          ul.nav.navbar-nav.navbar-right#searchbar
             li.hidden
               a(href='#page-top')
-            |                     
-            
+            li
+              form(method="POST" role="form" action="/search")
+                input(type='hidden', name='_csrf', value=_csrf)
+            li    
+                .form-group
+                  select.form-control(name='activities')
+                    option(selected='', value='all')  All activities
+
+            li
+                .form-group
+                  select.form-control(name='regions')
+                    option(selected='', value='all')  All regions
+            li
+                button.btn.btn-md(type='submit') Search
+
+
         // /.navbar-collapse
       // /.container-fluid

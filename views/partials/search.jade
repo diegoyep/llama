@@ -9,15 +9,29 @@ section#portfolio.bg-light-gray
     |             
     .row
       .col-lg-12
-        form
+        form(method="POST" role="form" action="/search")
+          input(type='hidden', name='_csrf', value=_csrf)
+
           .row
             .col-md-3.col-md-offset-3
               .form-group
-                label(for='activities')  What do you want to do? 
+                label(for='activity')  What do you want to do? 
                 |                                    
                 |                                         
-                select.form-control(name='activities')
-                  option(selected='', value='All activities')  All activities
+                select.form-control(name='activity')
+                  option(selected='', value='all')  All activities
+                  option(value='biking') Biking
+                  option(value='fishing') Fishing
+                  option(value='climbing') Climbing
+                  option(value='kayak') Kayak
+                  option(value='horseriding') Horse riding
+                  option(value='offroad') Offroad 4x4
+                  option(value='rafting') Rafting
+                  option(value='surf') Surfing
+                  option(value='sandboard') Sandboard
+                  option(value='trekking') Trekking
+
+ 
             |                              
             |                              
             .col-md-3
@@ -25,16 +39,20 @@ section#portfolio.bg-light-gray
                 label(for='activities')  Where do you want to go? 
                 |                                        
                 |                                         
-                select.form-control(name='regions')
-                  option(selected='', value='All regions')  All regions
+                select.form-control(name='location')
+                  option(selected='', value='all')  All regions
+                  option(value='arequipa') Arequipa
+                  option(value='cuzco') Cuzco
+                  option(value='huaraz') Huaraz
+                  option(value='puno')  Puno
+
             |        
             |                                
             |                             
             .clearfix
             |                             
             .col-lg-12.text-center
-              //button.btn.btn-xl(type='submit') Search
-              a.page-scroll(href='/results') search
+              button.btn.btn-xl(type='submit') Search
               |                                 
               h4.section-subheading.text-muted
                 br
